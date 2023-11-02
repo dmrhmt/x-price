@@ -16,6 +16,9 @@ You can install the requirements and resolve project dependencies with the follo
 For Akakçe -> https://api.akakce.com (web scraping was necessary)
 For Trendyol -> https://public.trendyol.com/discovery-web-websfxproductgroups-santral/api/v1/product-groups/
 is used.
+
+curl --location 'http://localhost:8080/product-prices?productId=1'
+
 ```bash
 # Install project dependencies
 mvn clean install
