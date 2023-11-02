@@ -13,12 +13,12 @@ Before running the project, make sure to meet the following requirements:
 
 You can install the requirements and resolve project dependencies with the following commands:
 
-For Akakçe -> https://api.akakce.com (web scraping was necessary)
-For Trendyol -> https://public.trendyol.com/discovery-web-websfxproductgroups-santral/api/v1/product-groups/
+- For Akakçe -> https://api.akakce.com (web scraping was necessary)
+- For Trendyol -> https://public.trendyol.com/discovery-web-websfxproductgroups-santral/api/v1/product-groups/
 is used.
 
+```bash
 curl --location 'http://localhost:8080/product-prices?productId=1'
 
-```bash
 # Install project dependencies
 mvn clean install
