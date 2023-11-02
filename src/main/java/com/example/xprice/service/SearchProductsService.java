@@ -22,20 +22,14 @@ public class SearchProductsService {
         List<ProductPriceDTO> productPriceList = new ArrayList<>();
         try {
             marketServiceList.forEach(marketService -> {
-                if (MarketName.AKAKCE.equals(marketService.getMarketName())) {
                     var marketProducts = ProductIdMarketProductIdMapping.productInfoMap.get(marketService.getMarketName());
                     var marketProductId = marketProducts.get(productId);
                     productPriceList.add(marketService.getProductPrice(marketProductId));
-                } else if (MarketName.TRENDYOL.equals(marketService.getMarketName())) {
-                    var marketProducts = ProductIdMarketProductIdMapping.productInfoMap.get(marketService.getMarketName());
-                    var marketProductId = marketProducts.get(productId);
-                    productPriceList.add(marketService.getProductPrice(marketProductId));
-                }
             });
         } catch (Exception e) {
             log.error("There is an error while getting product price list! {}", e);
         }
-        Collections.sort(productPriceList, Comparator.comparing(ProductPriceDTO::getPrice));
+        productPriceList.sort(Comparator.comparing(ProductPriceDTO::getPrice));
         return productPriceList;
     }
 }
